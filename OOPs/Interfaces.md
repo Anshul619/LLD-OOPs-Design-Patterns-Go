@@ -1,6 +1,7 @@
 # What are interfaces?
 - [Interfaces](https://gobyexample.com/interfaces) are a special type in Go that define a set of method signatures but do not provide implementations.
-- A [Go type](TypesGo.md) satisfies an interface by implementing the methods of that interface, nothing more. 
+- A [Go type](TypesGo.md) satisfies an interface by implementing the methods of that interface, nothing more.
+- Go interfaces are already reference types hence pointers to interfaces are not needed.
 
 > Note - We can't have fields, or methods implementation in interfaces.
 
@@ -24,7 +25,16 @@ func (r *rectangle) perim() float64 {
 ````
 
 # Interface names
-- By convention, one-method interfaces are named by the method name plus an -er suffix or similar modification to construct an agent noun: Reader, Writer, Formatter, CloseNotifier etc.
+- Interfaces are named after the behavior they expose.
+- By convention, one-method interfaces are named by the method name plus an -er suffix or similar modification to construct an agent noun: 
+  - Reader
+  - Writer
+  - Formatter
+  - CloseNotifier
+- If it has multiple related methods, use a noun that captures the role
+  - OrderProcessor 
+  - OrderPayload
+  - OrderContext
 
 # Embedding interface
 - In [embedding](https://www.geeksforgeeks.org/embedding-interfaces-in-golang/?ref=lbp), an interface can embed other interfaces or an interface can embed other interface’s method signatures in it.
